@@ -2,6 +2,8 @@ const socket = io();
 let username;
 let textarea = document.querySelector("#textarea");
 let messageArea = document.querySelector(".message_area");
+let button = document.querySelector("button");
+var audio = new Audio("ting.mp3");
 
 do {
   username = prompt("Please enter your name to join the Chat: ");
@@ -11,6 +13,10 @@ textarea.addEventListener("keyup", (e) => {
   if (e.keyCode == 13) {
     sendMessage(e.target.value);
   }
+});
+
+button.addEventListener("click", () => {
+  sendMessage(textarea.value);
 });
 
 //  what message to be sent
@@ -41,6 +47,7 @@ function appendMessage(msg, type) {
     `;
   mainDiv.innerHTML = markup;
   messageArea.appendChild(mainDiv);
+  audio.play();
 }
 
 // Recieve messages from server------
