@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuwan Chat App</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+
+    <section class="chat_section">
+        <div class="brand">
+            <img src="/logo.jpg" alt="">
+
+            <h1> Bhuwan - Chat App</h1>
+        </div>
+        <!-- the content inside 'message-area' will generate dynamically by Client.js and Server.js -->
+        <div class="message_area"></div>
+
+        <textarea  id="textarea" cols="30" rows="1" placeholder="Write a message.."></textarea>
+
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/client.js"></script>
+</body>
+</html>
+
